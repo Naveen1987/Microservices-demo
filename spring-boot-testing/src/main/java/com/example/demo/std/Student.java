@@ -36,6 +36,8 @@ public class Student {
 	private String lastModifiedby;
 	@LastModifiedDate
 	private LocalDateTime lastModifiedOn;
+	
+	
 	public Long getSid() {
 		return sid;
 	}
@@ -85,5 +87,12 @@ public class Student {
 		this.lastModifiedOn = lastModifiedOn;
 		return this;
 	}
+	@Override
+	public String toString() {
+		return "Student [sid=" + sid + ", sname=" + sname + ", sfee=" + sfee + ", createdBy=" + createdBy
+				+ ", createdOn=" + createdOn + ", lastModifiedby=" + lastModifiedby + ", lastModifiedOn="
+				+ lastModifiedOn + "]";
+	}
+	
 	
 }

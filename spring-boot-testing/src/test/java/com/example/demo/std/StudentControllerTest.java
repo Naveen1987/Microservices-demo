@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.std;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -104,10 +104,9 @@ public class StudentControllerTest {
 		System.out.println(inputInJson);
 		Mockito.<List<?>>when(
 				studentService.getList(Optional.of(Long.valueOf(1)))).thenReturn(sm);
-		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-				"/students").content(inputInJson)
-				.contentType(MediaType.APPLICATION_JSON);
+				"/students").accept(
+						MediaType.APPLICATION_JSON);
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();	
 		MockHttpServletResponse response = result.getResponse();
 		String outputInJson = response.getContentAsString();
